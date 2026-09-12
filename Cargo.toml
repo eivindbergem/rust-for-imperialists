@@ -1,3 +1,3 @@
 [workspace]
-members = ["00-setup"]
+members = ["00-setup", "01-hello"]
 resolver = "3"
