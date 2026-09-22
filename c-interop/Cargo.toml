@@ -9,4 +9,6 @@ edition = "2024"
 panic = "abort"
 
 [build-dependencies]
+bindgen = "0.73.2"
+cbindgen = "0.29.4"
 cc = "1.4.7"

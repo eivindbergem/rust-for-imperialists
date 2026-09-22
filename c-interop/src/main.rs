@@ -1,15 +1,15 @@
-unsafe extern "C" {
-    unsafe fn c_main() -> i32;
-}
+mod external;
+
+use external::c_main;
+use c_interop::add_one;
 
 fn main() {
     unsafe { c_main(); }
+
+    let value = add_one(45);
+    println!("{}", value);
 }
 
-#[unsafe(no_mangle)]
-pub extern "C" fn add_one(value: u32) -> u32 {
-    value + 1
-}
 
 // #[panic_handler]™
 // fn panic(_info: &core::panic::PanicInfo) -> ! {
