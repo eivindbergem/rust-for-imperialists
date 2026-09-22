@@ -36,7 +36,7 @@ lots of error types, such as
 for all IO errors from the OS. You can make your own error types. It
 is typical to use enums for errors:
 
-```
+```Rust
 enum MyErrorType {
     InvalidArgument,
 	IntTooBig(usize),
@@ -98,7 +98,7 @@ enum MyError {
 
 Then we can use the `From` trait to get conversion:
 
-```
+```Rust
 impl From<SomeError> for MyError {
     fn from(value: SomeError) -> Self {
 	    MyError::Some(SomeError)
@@ -118,4 +118,12 @@ fn my_function() -> Result<u32, MyError> {
 	
 	Ok(value + other_value)
 }
+```
+
+## Reading from stdin
+
+```Rust
+let stdin = std::io::stdin();
+let mut s = String::new();
+stdin.read_line(&mut s)?;
 ```
