@@ -17,7 +17,7 @@ a `String` will get you a `&str`, so functions taking strings should
 take `&str` unless ownership is required:
 
 ```Rust
-fn print_string(s: &s) {
+fn print_string(s: &str) {
 	println!("String: '{}'", s);
 }
 
