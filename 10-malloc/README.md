@@ -108,7 +108,7 @@ impl Buffer {
 	fn as_slice(&self) -> &[u8];
 	
 	// Return buffer as a mutable slice
-	fn as_slice_mut(&mut self) -> &self [u8];
+	fn as_slice_mut(&mut self) -> &mut [u8];
 }
 ```
 
